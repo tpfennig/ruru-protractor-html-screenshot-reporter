@@ -36,10 +36,6 @@ function HTMLScreenshotReporter(options) {
             } else {
                 spec.description += '-' + browser.version;
             }
-
-/*            if (browser.browserVersion) {
-                spec.description += '-' + browser.version;
-            }*/
         }
         spec.fullName = spec.description;
     };
