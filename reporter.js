@@ -1,5 +1,5 @@
 function getUniqueBrowserNames(jsonstr){
-    var browserArray = new Array();
+    var browserArray = [];
     for (var j = 0; j < jsonstr.length; j++) {
         var browsername = getBrowserNameFromResult(jsonstr[j]);
         browserArray.push(browsername);
@@ -22,9 +22,9 @@ function uniqueFilter(value, index, self) {
 function determineTestStatus(run){
     var assertions = run.assertions;
     var runDuration = run.duration;
-    var assertionsArray = new Array();
+    var assertionsArray = [];
     var passed = "";
-    var failedAssertions = new Array();
+    var failedAssertions = [];
     for (var i = 0; i < assertions.length; i++) {
         assertionsArray.push(assertions[i].passed);
     }
