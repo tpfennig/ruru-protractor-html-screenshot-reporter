@@ -30,19 +30,13 @@ function HTMLScreenshotReporter(options) {
         if (browser.browserName) {
             spec.description += '|' + browser.browserName;
             browser.currentTest += '|' + browser.browserName;
-
-            if (browser.browserName == "firefox") {
-                spec.description += '-' + browser.browserVersion;
-            } else {
-                spec.description += '-' + browser.version;
-            }
         }
         spec.fullName = spec.description;
     };
 
     self.specDone = function (spec) {
         browser.takeScreenshot().then(function (png) {
-            writeScreenShot(png, path.join(options.targetPath, options.screenshotsFolder, sanitizeFilename(spec.description)) + '.png');
+            writeScreenShot(png, path.join(options.targetPath, options.screenshotsFolder, "-", sanitizeFilename(spec.description)) + '.png');
         });
     };
 
@@ -70,8 +64,8 @@ function HTMLScreenshotReporter(options) {
     };
 
     function generateReport(jsonstr, automationHeader, elapsedTime) {
-        var allResults = new Array();
-        var testArray = new Array();
+        var allResults = [];
+        var testArray = [];
         var browserArrayUnique = reporter.getUniqueBrowserNames(jsonstr);
 
         for (var q = 0; q < jsonstr.length; q++) {
