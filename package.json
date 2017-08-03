@@ -1,6 +1,6 @@
 {
-  "name": "ruru-protractor-html-screenshot-reporter",
-  "version": "0.0.8",
+  "name": "s4-protractor-html-screenshot-reporter",
+  "version": "0.1.0",
   "description": "Protractor test results in HTML format with screen captures.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Andre-H/ruru-protractor-html-screenshot-reporter.git"
+    "url": "git+https://github.com/tpfennig/s4-protractor-html-screenshot-reporter.git"
   },
   "keywords": [
     "jasmine",
@@ -18,12 +18,12 @@
     "junit",
     "reporter"
   ],
-  "author": "Andre-H",
+  "author": "Thomas Pfennig",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Andre-H/ruru-protractor-html-screenshot-reporter/issues"
+    "url": "https://github.com/tpfennig/s4-protractor-html-screenshot-reporter/issues"
   },
-  "homepage": "https://github.com/Andre-H/ruru-protractor-html-screenshot-reporter#readme",
+  "homepage": "https://github.com/tpfennig/s4-protractor-html-screenshot-reporter#readme",
   "devDependencies": {
     "cpx": "^1.5.0",
     "fs": "0.0.2",

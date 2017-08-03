@@ -1,4 +1,4 @@
-# ruru-protractor-html-screenshot-reporter
+# s4-protractor-html-screenshot-reporter
 Protractor test results in HTML format with screen captures. 
 
 Will work with multi-capabilities and spec file sharding.
@@ -7,17 +7,13 @@ Will work with multi-capabilities and spec file sharding.
 
 Needs more tests, more use in different configurations.
 
-Build status: [![Run Status](https://api.shippable.com/projects/57bbb6deebc40a0e0045c977/badge?branch=master)](https://app.shippable.com/projects/57bbb6deebc40a0e0045c977)
-
-Test coverage: [![Coverage Badge](https://api.shippable.com/projects/57bbb6deebc40a0e0045c977/coverageBadge?branch=master)](https://app.shippable.com/projects/57bbb6deebc40a0e0045c977)
-
 ## Installation
-`npm install ruru-protractor-html-screenshot-reporter`
+`npm install s4-protractor-html-screenshot-reporter`
 
 ## Usage
 Place the following in your Protractor configuration file
 ```javascript
-var HTMLScreenshotReporter = require('ruru-protractor-html-screenshot-reporter');
+var HTMLScreenshotReporter = require('s4-protractor-html-screenshot-reporter');
 ```
 Create an instance of the reporter passing (optional) configuration parameters
 ```javascript
