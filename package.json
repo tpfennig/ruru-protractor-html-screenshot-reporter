@@ -1,6 +1,6 @@
 {
   "name": "s4-protractor-html-screenshot-reporter",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Protractor test results in HTML format with screen captures and teamcity output.",
   "main": "index.js",
   "scripts": {

@@ -8,11 +8,11 @@ function getUniqueBrowserNames(jsonstr){
 }
 
 function getBrowserNameFromResult(result){
-    return result.description.split('+')[1];
+    return result.description.split('__')[1];
 }
 
 function getTestNameFromResult(result){
-    return result.description.split('+')[0]
+    return result.description.split('__')[0]
 }
 
 function uniqueFilter(value, index, self) {

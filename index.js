@@ -111,8 +111,8 @@ function HTMLScreenshotReporter(options) {
         spec.description = __featureDenominator + featureName + __scenarioDenominator + spec.description;
         browser.currentTest = spec.description;
         if (browser.browserName) {
-            spec.description += '+' + browser.browserName;
-            browser.currentTest += '+' + browser.browserName;
+            spec.description += '__' + browser.browserName;
+            browser.currentTest += '__' + browser.browserName;
         }
         spec.fullName = spec.description;
     };
@@ -181,7 +181,7 @@ function HTMLScreenshotReporter(options) {
     var sanitizeFilename = function (name) {
         if(typeof name !== "undefined"){
             name = name.replace(/\s+/g, '-'); // Replace white space with dash
-            return name.replace(/[^0-9a-zA-Z\-+]/gi, ''); // Strip any special characters except the dash
+            return name.replace(/[^0-9a-zA-Z\-_]/gi, ''); // Strip any special characters except the dash
         }
     };
 
@@ -402,7 +402,7 @@ function HTMLScreenshotReporter(options) {
     }
 
     function runId(scenarioName, browserName) {
-        return sanitizeFilename(scenarioName) + "+"+  sanitizeFilename(browserName);
+        return sanitizeFilename(scenarioName) + "__"+  sanitizeFilename(browserName);
     }
 
     function copyResultsToFeatureCollection(resultArray) {
@@ -443,7 +443,7 @@ function HTMLScreenshotReporter(options) {
     function concatScriptSection() {
         var result = '<script type="text/javascript">';
         result += 'function showhide(scenarioName, browserName) {';
-        result += '	var e = document.getElementById(scenarioName+"+"+browserName);';
+        result += '	var e = document.getElementById(scenarioName+"__"+browserName);';
         result += '	var s = e.style.display;';
         result += '	var divs = document.getElementsByTagName("tr"), item;';
         result += '	for (var i = 0, len = divs.length; i < len; i++) {';
