@@ -3,6 +3,8 @@ var path = require('path');
 var reporter = require('./reporter.js');
 var UNDEFINED;
 
+var mkdirp = require('mkdirp');
+
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 
@@ -119,8 +121,17 @@ function HTMLScreenshotReporter(options) {
 
     self.specDone = function (spec) {
         browser.takeScreenshot().then(function (png) {
-            writeScreenShot(png, path.join(options.targetPath, options.screenshotsFolder, sanitizeFilename(spec.description)) + '.png');
+            var filePath = path.join(options.targetPath, options.screenshotsFolder);
+            mkdirp(filePath, function(err) {
+                if(err) {
+                    throw new Error('Could not create directory ' + filePath);
+                } else {
+                    writeScreenShot(png, path.join(filePath, sanitizeFilename(spec.description)) + '.png');
+                }
+            });
+
         });
+
         tcSpec = getSpec(spec);
         if (isSkipped(spec) || isDisabled(spec)) {
             tclog("testIgnored", {

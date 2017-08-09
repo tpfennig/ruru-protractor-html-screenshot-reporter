@@ -1,6 +1,6 @@
 {
   "name": "s4-protractor-html-screenshot-reporter",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Protractor test results in HTML format with screen captures and teamcity output.",
   "main": "index.js",
   "scripts": {
@@ -30,6 +30,7 @@
     "istanbul": "^0.4.4",
     "jasmine": "^2.4.1",
     "jshint": "^2.9.2",
+    "mkdirp":"^0.5.1",
     "node-jasmine-file-contents-matcher": "^0.1.3",
     "rimraf": "^2.5.4"
   }
